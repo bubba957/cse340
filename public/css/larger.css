@@ -1,0 +1,12 @@
+@media screen and (min-width: 48rem) {
+    body {
+        background-image: url('/images/site/checkerboard.jpg');
+    }
+
+    #wrapper {
+        background-color: white;
+        border: lightblue;
+        border-radius: 5px;
+        padding: -200px;
+    }
+}
