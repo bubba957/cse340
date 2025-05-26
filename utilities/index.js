@@ -57,6 +57,39 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+// /* **************************************
+// * Build the individual vehicle view HTML
+// * ************************************ */
+// Util.buildVehicleView = async function(view){
+//   let view
+//   if(v.length > 0){
+//     view = '<ul id="inv-display">'
+//     v.forEach(vehicle => { 
+//       view += '<li>'
+//       view +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
+//       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
+//       + 'details"><img src="' + vehicle.inv_thumbnail 
+//       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
+//       +' on CSE Motors" /></a>'
+//       view += '<div class="namePrice">'
+//       view += '<hr />'
+//       view += '<h2>'
+//       view += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
+//       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
+//       + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
+//       view += '</h2>'
+//       view += '<span>$' 
+//       + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span>'
+//       view += '</div>'
+//       view += '</li>'
+//     })
+//     view += '</ul>'
+//   } else { 
+//     view += '<p class="notice">Sorry, we couldn\'t find the vehicle you\'re looking for. It\'s probably on back order. Go back to the previous page.</p>'
+//   }
+//   return view
+// }
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

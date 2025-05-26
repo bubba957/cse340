@@ -1,0 +1,11 @@
+
+<% if (inv_make, inv_model) { %>
+<h1><%= inv_make, inv_model %></h1>
+<img href="../images/aerocar.jpg">
+<% } else {
+  res.redirect('/')
+} %>
+
+<%# messages() %>
+
+<%- grid %>
