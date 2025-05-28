@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.notice {
+  color: red;
+}
+
 .siteName {
   float: left;
   font-size: 60px;
