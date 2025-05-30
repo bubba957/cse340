@@ -9,8 +9,8 @@ const regValidate = require("../utilities/account-validation")
 router.get("/login", utilities.handleErrors(accountController.buildLogin))
 // Go to the registration page
 router.get("/registration", utilities.handleErrors(accountController.buildRegistration))
-// // Register a new account
-// router.post("/register", utilities.handleErrors(accountController.registerAccount))
+// Register a new account
+router.post("/register", utilities.handleErrors(accountController.registerAccount))
 // Process the registration data
 router.post(
   "/register",
