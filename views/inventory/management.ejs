@@ -1,0 +1,13 @@
+<h1><%- title %></h1>
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+        <% errors.array().forEach(error => { $>
+            <li><%= error.msg %></li>
+        <% }) %>
+    </ul>
+    <% } %>
+
+<h1>Vehicle Management</h1>
+<a href="add-classification.ejs">Add New Classification</a>
+<a href="add-inventory.ejs">Add New Vehicle</a>

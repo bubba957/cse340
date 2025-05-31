@@ -1,0 +1,24 @@
+<h1><%- title %></h1>
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+        <% errors.array().forEach(error => { $>
+            <li><%= error.msg %></li>
+        <% }) %>
+    </ul>
+    <% } %>
+
+<form class="form" method="post" action="/views/inventory/add-inventory.ejs">
+    <fieldset>
+        <label>Classification <select class="dropdown" name="classification">
+            <option value="custom">Custom</option>  
+            <option value="sedan">Sedan</option>
+            <option value="sport">Sport</option>
+            <option value="suv">SUV</option>
+            <option value="truck">Truck</option>  
+        </label>
+        <label>Make <input type="text" name="inv_make" value="<% locals.inv_make %>"></label>
+        <label>Model <input type="text" name="inv_model" value="<% locals.inv_model %>"></label>
+        <label>Description <textarea name="inv_"></textarea></label>
+    </fieldset>
+</form>

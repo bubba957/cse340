@@ -7,10 +7,13 @@
         <% }) %>
     </ul>
     <% } %>
+
 <form class="form" method="post" action="/account/login">
-    <label>Username <input type="email" name="account_email" required value="<%= locals.account_email %>"></label>
-    <label>Password <input type="password" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"></label>
-    <div class="password"><b>Password must be at least 12 characters in length and include at least 1 capital letter, 1 number, and 1 special character.</b></div>
-    <label><input type="submit" id="LOGIN" value="LOGIN"></label>
+    <fieldset>
+        <label>Username <input type="email" name="account_email" required value="<%= locals.account_email %>"></label>
+        <label>Password <input type="password" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"></label>
+        <div class="password"><b>Password must be at least 12 characters in length and include at least 1 capital letter, 1 number, and 1 special character.</b></div>
+        <label><input type="submit" class="submit" value="LOGIN"></label>
+    </fieldset>
+    <p>No account? <a href="/account/register">Sign-up</a></p>
 </form>
-<p>No account? <a href="/account/register">Sign-up</a></p>

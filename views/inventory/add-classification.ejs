@@ -1,0 +1,18 @@
+<h1><%- title %></h1>
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+        <% errors.array().forEach(error => { $>
+            <li><%= error.msg %></li>
+        <% }) %>
+    </ul>
+    <% } %>
+
+<form class="form" method="post" action="/views/inventory/add-classification.ejs">
+    <p>Classification Name</p>
+    <p><i>ALL INPUTS MUST BE LETTERS WITH NO SPACES OR SPECIAL CHARACTERS OF ANY KIND!!!</i></p>
+    <fieldset>
+        <label><input type="text" name="classification" required></label>
+        <input type="submit" class="submit" value="Add Classification">
+    </fieldset>
+</form>

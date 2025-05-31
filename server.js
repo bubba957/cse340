@@ -5,18 +5,18 @@
 /* ***********************
  * Require Statements
  *************************/
+// const accountRoute = require("./routes/accountRoute")
+const baseController = require("./controllers/baseController")
 const bodyParser = require("body-parser")
-const accountRoute = require("./routes/accountRoute")
-const session = require("express-session")
-const pool = require('./database/')
+const env = require("dotenv").config()
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
-const env = require("dotenv").config()
-const app = express()
-const static = require("./routes/static")
 const inventoryRoute = require("./routes/inventoryRoute")
-const baseController = require("./controllers/baseController")
+const pool = require('./database/')
+const session = require("express-session")
+const static = require("./routes/static")
 const utilities = require("./utilities/")
+const app = express()
 
 /* ***********************
  * Middleware
@@ -54,7 +54,7 @@ app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 app.use("/inv", inventoryRoute)
-app.use("/account", accountRoute)
+// app.use("/account", accountRoute)
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
