@@ -8,11 +8,12 @@
 // const accountRoute = require("./routes/accountRoute")
 const baseController = require("./controllers/baseController")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 const env = require("dotenv").config()
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const inventoryRoute = require("./routes/inventoryRoute")
-const pool = require('./database/')
+const pool = require("./database")
 const session = require("express-session")
 const static = require("./routes/static")
 const utilities = require("./utilities/")
@@ -39,6 +40,8 @@ app.use(function(req, res, next){
 })
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
 
 /* ***********************
  * View Engine and Templates
